@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <!--<%= image_tag @competition.banner.url(:medium) %>-->
+  <%= image_tag url_final(@competition.banner.path) %>
+</p>
+
+<p>
+  <strong>Bienvenido al concurso <%= @competition.name %>!!</strong>
+
+</p>
+
+
+<p>
+  <strong>Código del Administrador:</strong>
+  <%= @competition.users_id %>
+</p>
+
+<p>
+  <strong>Código del Concurso:</strong>
+  <%= @competition.id %>
+</p>
+
+
+<p>
+  <strong>Url:</strong>
+  <a href='<%= @competition.url %>'><%= @competition.url %></a>
+</p>
+
+<p>
+  <strong>Fecha de inicio:</strong>
+  <%= @competition.start_date %>
+</p>
+
+<p>
+  <strong>Fecha fin:</strong>
+  <%= @competition.end_date %>
+</p>
+
+<p>
+  <strong>Premio:</strong>
+  <%= @competition.prize %>
+</p>
+
+<h1>Lista de Competidores</h1>
+
+<% if @competitors.any? %>
+<table frame="border" border="4" >
+  <thead>
+    <tr>
+      <th>ID del competidor</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Date admission</th>
+      <th>Email</th>
+      <th>Mensaje</th>
+      <th>Estado video</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @competitors.each do |competitor| %>
+      <tr>
+        <td><%= competitor.id %></td>
+        <td><%= competitor.first_name %> <%= competitor.second_name %></td>
+        <td><%= competitor.last_name %> <%= competitor.second_last_name %></td>
+        <td><%= competitor.date_admission %></td>
+        <td><%= competitor.email %></td>
+        <td><%= competitor.message %></td>
+        <td><%= competitor.status_video %></td>
+        <td><%= link_to 'Ver', competitor_url(competitor.id) %>
+        <%= link_to 'Borrar', competitor, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<!--< will_paginate @competitors %>-->
+<% else %>
+<p>
+  <strong>Sin Datos:</strong>
+  Todavía no hay competidores en su concurso.
+</p>
+<% end %>
+<br>
+<%= link_to 'Editar', edit_competition_url %> |
+<%= link_to 'Atras', competitions_url %>
+

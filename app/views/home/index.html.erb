@@ -1,0 +1,92 @@
+
+  <!--Carousel
+  ==================================================-->
+
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+
+      <div class="active item">
+        <div class="container">
+          <div class="row">
+              <div class="span6">
+                <div class="carousel-caption">
+                      <h1><%= t('slider_title') %></h1>
+                      <p class="lead"><%= t('slider_description') %></p>
+                      <%= link_to t('create_account') , signup_path, class: "btn btn-large btn-primary" %>
+                </div>
+              </div>
+              <div class="span6"><%= image_tag "slide/slide1.jpg" %></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="container">
+          <div class="row">
+              <div class="span6">
+                <div class="carousel-caption">
+                      <h1><%= t('slider_title') %></h1>
+                      <p class="lead"><%= t('slider_description') %></p>
+                      <%= link_to t('create_account') , signup_path, class: "btn btn-large btn-primary" %>
+                </div>
+              </div>
+              <div class="span6"><%= image_tag "slide/slide2.jpg" %></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left " href="#myCarousel" data-slide="prev"><i class="icon-chevron-left"></i></a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next"><i class="icon-chevron-right"></i></a>
+      <!-- /.Carousel nav -->
+  </div>
+    <!-- /Carousel -->
+
+
+
+<!-- Feature 
+  ==============================================-->
+
+
+  <div class="row feature-box">
+      <div class="span12 cnt-title">
+       <h1><%= t('title_feature') %></h1> 
+        <span><%= t('description_feature') %></span>        
+      </div>
+
+      <div class="span4">
+        <%= image_tag "icon3.png" %>
+        <h2><%= t('feature_a') %></h2>
+        <p>
+            <%= t('feature_a_description') %>
+        </p>
+
+        <!--<a href="#">Read More &rarr;</a>-->
+
+      </div>
+
+      <div class="span4">
+        <%= image_tag "icon2.png" %>
+        <h2><%= t('feature_b') %></h2>
+        <p>
+            <%= t('feature_b_description') %> 
+        </p>   
+          <!--<a href="#">Read More &rarr;</a> -->   
+      </div>
+
+      <div class="span4">
+        <%= image_tag "icon1.png" %>
+        <h2><%= t('feature_c') %></h2>
+        <p>
+            <%= t('feature_c_description') %>
+        </p>
+          <!--<a href="#">Read More &rarr;</a>-->
+      </div>
+  </div>
+
+</div>
+
+<!-- /.Row View -->
+
+
